@@ -1,14 +1,9 @@
-/**
- * ClinixPay Main Server
- * Production-ready Express setup
- */
-
-require("dotenv").config(); // Load env FIRST
+require("dotenv").config(); 
 
 const express = require("express");
 const http = require("http");
 const connectDB = require("./config/connection");
-
+const registerRoutes = require("./Routes/registerRoutes");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -24,10 +19,12 @@ app.get("/", (req, res) => {
   });
 });
 
+
+app.use("/api/v1", registerRoutes);
 /* -------------------- Start Server -------------------- */
 const startServer = async () => {
   try {
-    await connectDB(); // DB first, server later
+    await connectDB(); 
 
     const server = http.createServer(app);
 
