@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const connectDB = require("./config/connection");
-const registerRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 /* Routes */
-app.use("/api/v1", registerRoutes);
+app.use("/api/v1", authRoutes);
 
 /* Start Server */
 connectDB();
