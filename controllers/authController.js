@@ -1,4 +1,4 @@
-const Register = require("../models/Register");
+const Register = require("../models/Coustomer");
 const asyncHandler = require("../middlewares/asyncHandler");
 
 exports.registerStore = asyncHandler(async (req, res) => {

@@ -1,5 +1,5 @@
-const { registerStore } = require("../controllers/registerController");
-const Register = require("../models/Register");
+const { registerStore } = require("../controllers/authController");
+const Register = require("../models/Coustomer");
 
 // Mock the Register model
 jest.mock("../models/Register");
