@@ -28,4 +28,3 @@ build
 *.swp
 *.swo
 
-/scripts/seedAdmin.js
