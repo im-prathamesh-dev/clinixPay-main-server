@@ -28,4 +28,4 @@ build
 *.swp
 *.swo
 
-# Mac system files
+/scripts/seedAdmin.js

@@ -6,6 +6,7 @@ const Admin = require("../models/Admin");
 
 const seedAdmin = async () => {
   try {
+    // await mongoose.connect("mongodb+srv://clinixpayAdmin:Xpay%40clinix123@cluster0.qkllrqk.mongodb.net/clinixpay?retryWrites=true&w=majority");
 
     const existingAdmin = await Admin.findOne({
       email: "admin@clinixpay.com"
