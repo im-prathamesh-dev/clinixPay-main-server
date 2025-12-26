@@ -24,5 +24,8 @@ exports.loginAdmin = async (req, res) => {
     { expiresIn: "1d" }
   );
 
-  res.json({ token });
+  res.json({
+    message: "Login successful",
+    token
+  });
 };

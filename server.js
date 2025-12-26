@@ -9,6 +9,7 @@ const getNotificationRoutes = require("./routes/Customer/customerRoutes");
 const cors = require("cors");
 const adminAuth = require("./middlewares/adminAuth");
 const adminAuthRoutes = require("./routes/Admin/adminAuthRoutes");
+const paymentRoutes = require("./routes/Admin/Payments/paymentRoutes");
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use("/api/v1", authRoutes);
 app.use("/api/v1", customerRoutes);
 app.use("/api/v1/admin", adminAuthRoutes,notificationRoutes);
 app.use("/api/v1/customer", getNotificationRoutes);
+app.use("/api/v1/admin", adminAuth,paymentRoutes);
 
 
 /* Start Server */
