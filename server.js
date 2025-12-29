@@ -10,7 +10,8 @@ const cors = require("cors");
 const adminAuth = require("./middlewares/adminAuth");
 const adminAuthRoutes = require("./routes/Admin/adminAuthRoutes");
 const paymentRoutes = require("./routes/Admin/Payments/paymentRoutes");
-const billingRoutes=require("./controllers/Customer/endUserBilling");
+const billingRoutes = require("./routes/Customer/endUserBilling");
+
 
 
 const app = express();
