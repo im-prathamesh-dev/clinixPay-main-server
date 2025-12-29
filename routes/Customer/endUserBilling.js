@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const billingCtrl = require("../../controllers/Customer/endUserBilling");
+const customerAuth = require("../../middlewares/customerAuth");
+
+// Apply customer authentication middleware to all billing routes
+router.use(customerAuth);
 
 // Billing Routes
 router.post("/bill/draft", billingCtrl.createDraftBill);

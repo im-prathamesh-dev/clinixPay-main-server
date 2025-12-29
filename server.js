@@ -1,12 +1,12 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const connectDB = require("./config/connection");
 const authRoutes = require("./routes/authRoutes");
 const customerRoutes = require("./routes/Customer/customerRoutes");
 const notificationRoutes = require("./routes/Admin/notificationRoute")
 const getNotificationRoutes = require("./routes/Customer/customerRoutes");
-const cors = require("cors");
 const adminAuth = require("./middlewares/adminAuth");
 const adminAuthRoutes = require("./routes/Admin/adminAuthRoutes");
 const paymentRoutes = require("./routes/Admin/Payments/paymentRoutes");
