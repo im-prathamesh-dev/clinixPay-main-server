@@ -91,7 +91,7 @@ const registerSchema = new mongoose.Schema(
     type: String,
     required: true,
     minlength: 6,
-    select: false   // 🔒 never returned in queries
+    select: false   
   },
 
   isActive: {

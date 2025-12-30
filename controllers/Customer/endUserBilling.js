@@ -219,3 +219,25 @@ exports.todayBills = async (req, res) => {
     });
   }
 };
+
+// get all bills for a customer
+
+exports.getAllBills = async (req, res) => {
+  try{
+    const customerId = req.user?.customerId || null; // from JWT
+
+    const bills = await EndUserBill.find({ customerId }).sort({ createdAt: -1 });
+
+    res.json({
+      success: true,
+      count: bills.length,
+      bills
+    });
+  } catch (err) {
+    console.error('❌ Error in getAllBills:', err);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+      error: err.message
+    });
+  }}

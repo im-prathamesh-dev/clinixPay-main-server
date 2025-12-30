@@ -12,5 +12,6 @@ router.post("/bill/draft", billingCtrl.createDraftBill);
 router.put("/bill/draft/:id", billingCtrl.updateDraftBill);
 router.put("/bill/final/:id", billingCtrl.finalizeBill);
 router.get("/bill/today", billingCtrl.todayBills);
+router.get("/bill/allbills", billingCtrl.getAllBills);
 
 module.exports = router;
