@@ -6,11 +6,27 @@ const AgencyBill = require("../../models/AgencyBill");
  * POST /api/agency-bill/draft
  */
 exports.createDraftAgencyBill = async (req, res) => {
+  console.log("📥 Received bill data:", req.body);
+  
   try {
+     console.log("Decoded user in controller:", req.user);
+    const customerId = req.user?.customerId || req.body?.customerId || null; // try JWT then body
+
+    if (!customerId) {
+      console.warn("No customerId in req.user or req.body - rejecting request");
+      return res.status(400).json({
+        success: false,
+        message: "customerId is required to create an agency bill",
+      });
+    }
+
     const billData = {
       ...req.body,
+      customerId,
       status: "DRAFT",
     };
+
+    console.log("Creating agency bill with:", billData);
 
     const bill = await AgencyBill.create(billData);
 

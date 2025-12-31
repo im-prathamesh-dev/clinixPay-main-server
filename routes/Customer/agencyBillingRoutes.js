@@ -9,7 +9,8 @@ const {
   getAgencyBillsByCustomer,
   getAgencyBillById,
 } = require("../../controllers/Customer/agencyBillingController");
-
+const customerAuth = require("../../middlewares/customerAuth");
+router.use(customerAuth);
 // Create draft
 router.post("/draft", createDraftAgencyBill);
 

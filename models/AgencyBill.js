@@ -7,7 +7,6 @@ const agencyBillSchema = new mongoose.Schema(
     customerId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Customer",
-      required: true
     },
 
     // 🏢 Agency details (SNAPSHOT from frontend)
@@ -40,7 +39,7 @@ const agencyBillSchema = new mongoose.Schema(
     // Payment (Agency allows CREDIT)
     paymentMode: {
       type: String,
-      enum: ["Cash", "UPI", "Card", "ONLINE", "CREDIT"],
+      enum: ["CASH", "UPI", "Card", "ONLINE", "CREDIT"],
       default: "CREDIT"
     },
 

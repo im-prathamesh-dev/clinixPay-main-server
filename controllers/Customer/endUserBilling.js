@@ -5,6 +5,7 @@ exports.createDraftBill = async (req, res) => {
   
 
   console.log("📥 Received bill data:", req.body);
+  
 
   try {
     console.log("Decoded user in controller:", req.user);
