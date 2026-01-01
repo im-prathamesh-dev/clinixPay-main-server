@@ -12,6 +12,8 @@ const adminAuthRoutes = require("./routes/Admin/adminAuthRoutes");
 const paymentRoutes = require("./routes/Admin/Payments/paymentRoutes");
 const billingRoutes = require("./routes/Customer/endUserBilling");
 const agencyBillRoutes = require("./routes/Customer/agencyBillingRoutes");
+const purchaseRoutes = require("./routes/purchaseRoutes");
+const inventoryRoutes = require("./routes/inventoryRoutes");
 
 
 const app = express();
@@ -38,6 +40,8 @@ app.use("/api/v1/customer", getNotificationRoutes);
 app.use("/api/v1/admin", adminAuth,paymentRoutes);
 app.use("/api/v1/customer", billingRoutes); 
 app.use("/api/v1/customer/agency-bill", agencyBillRoutes);
+app.use("/api/v1/customer/purchaseEntry", purchaseRoutes);
+app.use("/api/v1/customer/inventory", inventoryRoutes);
 
 
 
