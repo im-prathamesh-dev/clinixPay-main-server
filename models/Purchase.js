@@ -6,7 +6,7 @@ const purchaseItemSchema = new mongoose.Schema(
     productName: { type: String, required: true },
     mfg: { type: String },
     unit: { type: String },
-    qty: { type: Number, default: 1 },
+    qty: { type: Number },
     sch: { type: String },
     batch: { type: String },
     exp: { type: String },
