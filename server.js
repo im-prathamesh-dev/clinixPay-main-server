@@ -14,6 +14,7 @@ const billingRoutes = require("./routes/Customer/endUserBilling");
 const agencyBillRoutes = require("./routes/Customer/agencyBillingRoutes");
 const purchaseRoutes = require("./routes/purchaseRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
+const dashboardRoutes = require("./routes/Customer/DashboardRoutes");
 
 
 const app = express();
@@ -23,6 +24,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 /* Health Check */
 app.get("/", (req, res) => {
@@ -35,13 +37,16 @@ app.get("/", (req, res) => {
 /* Routes */
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", customerRoutes);
+//
 app.use("/api/v1/admin", adminAuthRoutes,notificationRoutes);
 app.use("/api/v1/customer", getNotificationRoutes);
 app.use("/api/v1/admin", adminAuth,paymentRoutes);
+//
 app.use("/api/v1/customer", billingRoutes); 
 app.use("/api/v1/customer/agency-bill", agencyBillRoutes);
 app.use("/api/v1/customer/purchaseEntry", purchaseRoutes);
 app.use("/api/v1/customer/inventory", inventoryRoutes);
+app.use("/api/v1/customer/dashboard", dashboardRoutes);
 
 
 
