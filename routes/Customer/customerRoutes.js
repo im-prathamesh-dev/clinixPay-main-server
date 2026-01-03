@@ -16,4 +16,5 @@ router.get("/notifications", auth, getNotificationController.getNotifications);
 router.patch("/notifications/mark-read/:id", auth, getNotificationController.markRead);
 
 
+
 module.exports = router;
