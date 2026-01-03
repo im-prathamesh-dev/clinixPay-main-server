@@ -82,6 +82,14 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
+    // how can we check user have internet connection?
+    const internetCheck = await axios.get("https://www.google.com", { timeout: 5000 });
+    if (!internetCheck) {
+      return res.status(503).json({
+        success: false,
+        message: "No internet connection"
+      });
+    }
 
     // 1️⃣ Find customer
     const customer = await Customer.findOne({ email }).select("+password");
