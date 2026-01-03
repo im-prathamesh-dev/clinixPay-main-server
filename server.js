@@ -14,6 +14,7 @@ const billingRoutes = require("./routes/Customer/endUserBilling");
 const agencyBillRoutes = require("./routes/Customer/agencyBillingRoutes");
 const purchaseRoutes = require("./routes/purchaseRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
+const endUsersDataRoutes = require("./routes/Customer/endUsersDataRoutes");
 const dashboardRoutes = require("./routes/Customer/DashboardRoutes");
 
 
@@ -46,7 +47,6 @@ app.use("/api/v1/customer", billingRoutes);
 app.use("/api/v1/customer/agency-bill", agencyBillRoutes);
 app.use("/api/v1/customer/purchaseEntry", purchaseRoutes);
 app.use("/api/v1/customer/inventory", inventoryRoutes);
-app.use("/api/v1/customer/dashboard", dashboardRoutes);
 
 
 
